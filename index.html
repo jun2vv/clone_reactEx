@@ -9,14 +9,11 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         function App () {
-            const [counter, setCounter] = React.useState(0);
-            const onClick = () => {
-                setCounter(counter + 1);
-            };
             return (
                 <div>
-                    <h3>Total click: {counter}</h3>
-                    <button onClick={onClick}>Click me</button>
+                    <h1>Super Converter</h1>
+                    <input plachoder="Minutes" type="number"/>
+                    <input plachoder="Hours" type="number"/>
                 </div>
             );
         }

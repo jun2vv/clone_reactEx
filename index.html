@@ -9,11 +9,24 @@
     <script type="text/babel">
         const root = document.getElementById("root");
         function App () {
+            const [minutes, setMinutes] = React.useState();
+            const onChange = (event) => {
+                setMinutes(event.target.value)
+            };
+            const reset =() => setMinutes(0);
             return (
                 <div>
-                    <h1>Super Converter</h1>
-                    <input plachoder="Minutes" type="number"/>
-                    <input plachoder="Hours" type="number"/>
+                    <h1 className="hi">Super Converter</h1>
+                    <div>
+                        <label for="minutes">Minutes</label>
+                        <input value={minutes} id="minutes" plachoder="Minutes" type="number" onChange={onChange} />
+                    </div>
+
+                    <div>
+                        <label for="hours">Hours</label>
+                        <input value={Math.round(minutes/60)} id="hours" plachoder="Hours" type="number"/>
+                    </div>
+                    <button onClick={reset}>Reset</button>
                 </div>
             );
         }
